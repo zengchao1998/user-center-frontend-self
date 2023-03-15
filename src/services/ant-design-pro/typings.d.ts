@@ -2,6 +2,7 @@
 /* eslint-disable */
 
 declare namespace API {
+  /** 当前用户信息 */
   type CurrentUser = {
     id?: string;
     username?: string;
@@ -18,6 +19,14 @@ declare namespace API {
     url?: string;
   };
 
+  /** 对接后端通用返回类型 */
+  type BaseResponse<T> = {
+    code: number,
+    data: T,
+    message: string;
+    description: string;
+  }
+
   /** 登录返回的用户信息 */
   type LoginResult = {
     status?: string;
@@ -27,6 +36,23 @@ declare namespace API {
 
   /** 注册返回的用户信息 */
   type RegisterResult = number;
+
+  /** 补充注册参数 */
+  type RegisterParams = {
+    userAccount?: string;
+    userPassword?: string;
+    checkPassword?: string;
+    validateCode?: string;
+    type?: string;
+  };
+
+  /** 登录输入参数 */
+  type LoginParams = {
+    userAccount?: string;
+    userPassword?: string;
+    autoLogin?: boolean;
+    type?: string;
+  };
 
   type PageParams = {
     current?: number;
@@ -58,22 +84,6 @@ declare namespace API {
   type FakeCaptcha = {
     code?: number;
     status?: string;
-  };
-
-  type LoginParams = {
-    userAccount?: string;
-    userPassword?: string;
-    autoLogin?: boolean;
-    type?: string;
-  };
-
-  /** 补充注册参数 */
-  type RegisterParams = {
-    userAccount?: string;
-    userPassword?: string;
-    checkPassword?: string;
-    validateCode?: string;
-    type?: string;
   };
 
   type ErrorResponse = {

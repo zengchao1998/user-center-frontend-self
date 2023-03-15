@@ -21,7 +21,7 @@ export const initialStateConfig = {
 
 /** 前端请求地址 */
 export const request: RequestConfig = {
-  timeout: 100000,
+  timeout: 10000,
 };
 
 /**
@@ -55,6 +55,7 @@ export async function getInitialState(): Promise<{
   return {
     // @ts-ignore
     fetchUserInfo,
+    // @ts-ignore
     currentUser,
     settings: defaultSettings,
   };
