@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 import type { ProColumns, ActionType } from '@ant-design/pro-table';
 import { ProTable } from '@ant-design/pro-table';
-import {Image} from "antd";
-import {searchUsers} from "@/services/ant-design-pro/api";
-import {TableDropdown} from "@ant-design/pro-components";
+import { Image } from 'antd';
+import { searchUsers } from '@/services/ant-design-pro/api';
+import { TableDropdown } from '@ant-design/pro-components';
 
 const columns: ProColumns<API.CurrentUser>[] = [
   {
@@ -26,7 +26,7 @@ const columns: ProColumns<API.CurrentUser>[] = [
     dataIndex: 'avatarUrl',
     render: (_, record) => (
       <div>
-        <Image src={record.avatarUrl} width={30} height={30}/>
+        <Image src={record.avatarUrl} width={30} height={30} />
       </div>
     ),
   },
@@ -58,9 +58,9 @@ const columns: ProColumns<API.CurrentUser>[] = [
     dataIndex: 'userRole',
     valueType: 'select',
     valueEnum: {
-      0: {text: '普通用户', status: 'Default'},
-      1: {text: '管理员', status: 'Success'},
-    }
+      0: { text: '普通用户', status: 'Default' },
+      1: { text: '管理员', status: 'Success' },
+    },
   },
   {
     title: '创建时间',
@@ -103,12 +103,13 @@ export default () => {
       actionRef={actionRef}
       cardBordered
       // 通过前端接口向后端发送指定请求 (searchUsers),将请求中获取的数据作为表单的数据源
+      // @ts-ignore
       request={async (params = {}, sort, filter) => {
         console.log(sort, filter);
         const userList = await searchUsers();
         return {
-          data: userList
-        }
+          data: userList,
+        };
       }}
       editable={{
         type: 'multiple',
