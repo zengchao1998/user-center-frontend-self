@@ -138,7 +138,7 @@ export default () => {
         pageSize: 5,
       }}
       dateFormatter="string"
-      headerTitle="高级表格"
+      headerTitle="用户信息"
     />
   );
 };

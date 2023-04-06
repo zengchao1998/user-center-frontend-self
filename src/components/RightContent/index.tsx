@@ -6,6 +6,7 @@ import HeaderSearch from '../HeaderSearch';
 import Avatar from './AvatarDropdown';
 import styles from './index.less';
 export type SiderTheme = 'light' | 'dark';
+
 const GlobalHeaderRight: React.FC = () => {
   const { initialState } = useModel('@@initialState');
   if (!initialState || !initialState.settings) {
@@ -56,4 +57,5 @@ const GlobalHeaderRight: React.FC = () => {
     </Space>
   );
 };
+
 export default GlobalHeaderRight;
