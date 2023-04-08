@@ -12,7 +12,8 @@ import { stringify } from 'querystring';
  */
 const request = extend({
   credentials: 'include', // 默认请求是否带上cookie
-  prefix: process.env.NODE_ENV === 'production' ? 'http://user-backend.code-nav.cn' : undefined,
+  // 修改请求路径的前缀 http://localhost:8080/...  --> http://47.120.9.159:8080/....
+  prefix: process.env.NODE_ENV === 'production' ? 'http://47.120.9.159:8080' : undefined,
   // requestType: 'form',
 });
 

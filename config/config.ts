@@ -17,6 +17,7 @@ export default defineConfig({
     siderWidth: 208,
     ...defaultSettings,
   },
+  // 按需加载
   dynamicImport: {
     loading: '@ant-design/pro-layout/es/PageLoading',
   },
@@ -49,5 +50,6 @@ export default defineConfig({
   },
   mfsu: {},
   webpack5: {},
+  // 页面静态化, 根据路由设置，生成静态的html页面
   exportStatic: {},
 });
