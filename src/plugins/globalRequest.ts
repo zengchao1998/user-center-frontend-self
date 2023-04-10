@@ -12,8 +12,13 @@ import { stringify } from 'querystring';
  */
 const request = extend({
   credentials: 'include', // 默认请求是否带上cookie
-  // 修改请求路径的前缀 http://localhost:8080/...  --> http://47.120.9.159:8080/....
-  prefix: process.env.NODE_ENV === 'production' ? 'http://47.120.9.159:8080' : undefined,
+  // 修改请求路径的前缀
+  // 本地测试配置
+  // prefix: process.env.NODE_ENV === 'production' ? 'http://localhost:8080' : undefined,
+
+  // 远程路径配置
+  prefix: process.env.NODE_ENV === 'production' ? 'http://47.120.9.159' : undefined,
+  // prefix: process.env.NODE_ENV === 'production' ? 'http://user-center-backend.zengchao1998.com.cn' : undefined,
   // requestType: 'form',
 });
 
