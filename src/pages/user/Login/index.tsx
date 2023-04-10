@@ -6,7 +6,7 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { LoginForm, ProFormCheckbox, ProFormText } from '@ant-design/pro-components';
 import { Alert, Divider, message, Space, Tabs } from 'antd';
 import React, { useState } from 'react';
-import { history, useModel } from 'umi';
+import { history, Link, useModel } from 'umi';
 import styles from './index.less';
 
 const LoginMessage: React.FC<{
@@ -137,7 +137,7 @@ const Login: React.FC = () => {
               <ProFormCheckbox noStyle name="autoLogin">
                 自动登录
               </ProFormCheckbox>
-              <a href="/user/register">新用户注册</a>
+              <Link to="/user/register">新用户注册</Link>
               <a
                 style={{
                   float: 'right',
