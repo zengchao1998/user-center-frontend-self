@@ -80,7 +80,7 @@ const columns: ProColumns<API.CurrentUser>[] = [
       >
         编辑
       </a>,
-      <a href={record.url} target="_blank" rel="noopener noreferrer" key="view">
+      <a href="" target="_blank" rel="noopener noreferrer" key="view">
         查看
       </a>,
       <TableDropdown

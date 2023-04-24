@@ -15,17 +15,15 @@ declare namespace API {
     createTime?: Date;
     userRole?: number;
     validateCode?: string;
-    unreadCount?: number;
-    url?: string;
   };
 
   /** 对接后端通用返回类型 */
   type BaseResponse<T> = {
-    code: number,
-    data: T,
+    code: number;
+    data: T;
     message: string;
     description: string;
-  }
+  };
 
   /** 登录返回的用户信息 */
   type LoginResult = {
